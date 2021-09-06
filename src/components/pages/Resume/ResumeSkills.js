@@ -6,35 +6,40 @@ import {
   Typography,
   Chip,
   Link,
+  Box,
 } from "@material-ui/core";
 import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import TimelineDot from "@material-ui/lab/TimelineDot";
 import { makeStyles, useTheme } from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
-
+import clsx from "clsx";
 import { personalInfo } from "../../data/personalInfo";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexDirection: "column",
+    marginTop: "14px",
+
   },
   mainTitle: {
     display: "flex",
-    marginTop: "14px",
     padding: "4px 16px",
-    alignItems: "center",
-    fontWeight:'bold',
-    justifyContent:'center'
+    fontWeight: "bold",
+    justifyContent: "center",
   },
   items: {
     display: "flex",
     aligItems: "center",
     flexWrap: "wrap",
   },
+  hobbies: {
+    display: "flex",
+    alignItems: "center",
+    flexWrap: "wrap",
+  },
+
   stylePaper: {
     padding: "2px 5px",
-    // backgroundColor: "#222",
-    // color: "white",
     margin: "0 10px 10px 10px ",
     flex: 1,
   },
@@ -54,34 +59,38 @@ const useStyles = makeStyles((theme) => ({
 
 const ResumeSkills = (props) => {
   const classes = useStyles();
-  const theme = useTheme()
+  const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const contentSize = isMobile ? 'body2' : 'body1'
+  const contentSize = isMobile ? "body2" : "body1";
 
   return (
     <>
+      <Grid container className={classes.root}>
       <Typography variant="h5" className={classes.mainTitle}>
         Skills
       </Typography>
-      <Grid container className={classes.root}>
         <Paper className={classes.stylePaper} elevation={3}>
-          <Typography variant="h6" style={{fontWeight:'bold'}}>Programming Skills</Typography>
+          <Typography variant="h6" style={{ fontWeight: "bold" }}>
+            Programming Skills
+          </Typography>
           {personalInfo.skills.codingSkills.map((skill) => (
-            <Grid item key={skill.id} className={classes.items}>
+            <Box key={skill.id} className={classes.items}>
               {skill.languages.map((lang) => (
                 <Chip
                   key={Math.random()}
                   label={lang}
                   variant="outlined"
-                  color="primary"
+                  color="secondary"
                   classes={{ root: classes.chip }}
                 />
               ))}
-            </Grid>
+            </Box>
           ))}
         </Paper>
         <Paper className={classes.stylePaper} elevation={3}>
-          <Typography variant="h6" style={{fontWeight:'bold'}}>Languages</Typography>
+          <Typography variant="h6" style={{ fontWeight: "bold" }}>
+            Languages
+          </Typography>
           {personalInfo.skills.languages.map((lang) => (
             <Grid item key={lang.id} className={classes.items}>
               <ListItem dense key={Math.random()}>
@@ -99,10 +108,11 @@ const ResumeSkills = (props) => {
         </Paper>
 
         <Paper className={classes.stylePaper} elevation={3}>
-          <Typography variant="h6" style={{fontWeight:'bold'}}>Soft Skills</Typography>
+          <Typography variant="h6" style={{ fontWeight: "bold" }}>
+            Soft Skills
+          </Typography>
           {personalInfo.skills.softSkills.map((skill) => (
-            <Grid item key={`${skill} ${Math.random()}`} className={classes.items}>
-              <ListItem dense>
+              <ListItem dense key={`${skill} ${Math.random()}`}>
                 <TimelineDot
                   variant="outlined"
                   color="primary"
@@ -110,15 +120,17 @@ const ResumeSkills = (props) => {
                 />
                 <Typography variant={contentSize}>{skill}</Typography>
               </ListItem>
-            </Grid>
+            
           ))}
         </Paper>
 
         <Paper className={classes.stylePaper} elevation={3}>
-          <Typography variant="h6" style={{fontWeight:'bold'}}>Courses & Certifications</Typography>
+          <Typography variant="h6" style={{ fontWeight: "bold" }}>
+            Courses & Certifications
+          </Typography>
           {personalInfo.skills.courses.map((course) => (
-            <Grid item key={course.url} className={classes.items}>
-              <ListItem dense key={Math.random()}>
+            
+              <ListItem dense key={course.url}>
                 <TimelineDot
                   variant="outlined"
                   color="primary"
@@ -133,12 +145,29 @@ const ResumeSkills = (props) => {
                     color="inherit"
                   >
                     {course.title}
-                  <OpenInNewIcon fontSize="small" />
+                    <OpenInNewIcon fontSize="small" />
                   </Link>
                 </Typography>
               </ListItem>
-            </Grid>
           ))}
+        </Paper>
+        <Paper className={clsx(classes.stylePaper)} elevation={3}>
+          <Box>
+            <Typography variant="h6" style={{ fontWeight: "bold"}}>
+              Hobbies
+            </Typography>
+          </Box>
+          <Box className={classes.hobbies}>
+            {personalInfo.hobbies.map((hobbie) => (
+                <Chip
+                  key={hobbie}
+                  label={hobbie}
+                  variant="outlined"
+                  color="secondary"
+                  classes={{ root: classes.chip }}
+                />
+            ))}
+          </Box>
         </Paper>
       </Grid>
     </>

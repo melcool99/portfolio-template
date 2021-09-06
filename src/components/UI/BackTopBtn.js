@@ -1,4 +1,4 @@
-import React, {useState, useEffect,useCallback} from "react";
+import React, {useState, useEffect} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import ArrowDropUpIcon from "@material-ui/icons/ArrowDropUp";
@@ -15,20 +15,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const BackTopBtn = ({scroll}) => {
+const BackTopBtn = () => {
   const classes = useStyles();
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(false)
 
-  const toggleView = useCallback(
-    () => {
-      if(scroll > 300){
+  const toggleView = () => {
+      if(window.pageYOffset > 300){
         setVisible(true)
       } else {
         setVisible(false)
       }
-    },
-    [scroll],
-  )
+    }
+  
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -43,7 +41,7 @@ const BackTopBtn = ({scroll}) => {
     return () => {
       window.removeEventListener('scroll', toggleView)
     }
-  } , [scroll, toggleView])
+  } , [])
 
   return (
     <>

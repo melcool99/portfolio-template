@@ -6,7 +6,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Drawer } from "@material-ui/core";
 import { useLocation } from "react-router";
 
@@ -24,7 +24,7 @@ export const menuItems = [
     path: "/portfolio",
   },
 ];
-const drawerWidth = 80;
+const drawerWidth = 100;
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -32,16 +32,10 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
   },
   drawerPaper: {
-    width: 70,
+    width: 90,
+    marginLeft: 4,
   },
-  // menuButton: {
-  //   '&.active':{
-  //     color:'#ffbb93'
-  //   },
-  //   '&:hover':{
-  //     color:'#ffbb93'
-  //   },
-  // },
+
   paperAnchorLeft: {
     borderRight: 0,
   },
@@ -50,21 +44,27 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     flexDirection: "column",
     justifyContent: "center",
-   
   },
+
+ navItemsSelectedDark:{
+   color:'#e65100',
+   "& .MuiListItemIcon-root": {
+    color:'#e65100'
+  },
+   '&:hover':{
+     color:'white'
+   }
+ },
 
   navIcons: {
     justifyContent: "center",
-    color: "#e65100",
-    
-  
   },
 }));
 
-const Navbar = ({ isMobile }) => {
+const Navbar = ({ isMobile, darkMode, setDarkmode }) => {
   const classes = useStyles();
   // const theme = useTheme();
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <Drawer
@@ -77,15 +77,20 @@ const Navbar = ({ isMobile }) => {
       className={classes.drawer}
       open={!isMobile}
     >
-      <List component="nav">
+      <List component="nav" >
+        {/* <ListItem className={classes.navItems}>
+          <DarkModeSwitch darkMode={darkMode} setDarkmode={setDarkmode} isMobile={isMobile}/>
+        </ListItem> */}
         {menuItems.map((item) => (
           <ListItem
             key={item.text}
             button
             dense
-            component={Link} to={item.path}
+            component={NavLink}
+            to={item.path}
             className={classes.navItems}
             selected={item.path === location.pathname}
+            classes={{selected: classes.navItemsSelectedDark}}
           >
             <ListItemIcon className={classes.navIcons}>
               {item.icon}

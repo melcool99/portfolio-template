@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Resume = ({ isMobile }) => {
+const Resume = ({ isMobile, darkMode,setDarkmode }) => {
   const classes = useStyles();
 
   return (
@@ -33,6 +33,7 @@ const Resume = ({ isMobile }) => {
         <WorkExperience classes={classes.paper} />
       </Grid>
       <Grid item className={classes.rootItems} md={6} lg={6} sm={6} xs={12}>
+       
         <ResumeSkills  />
       </Grid>
     </Grid>
