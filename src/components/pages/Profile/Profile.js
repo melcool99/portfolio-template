@@ -20,8 +20,9 @@ import { personalInfo } from "../../data/personalInfo";
 const useStyles = makeStyles((theme) => ({
 
   root:{
-    // backgroundColor: "#ffbb93",
-   
+    backgroundColor: "rgba(122, 111, 92, 0.3)",
+    backdropFilter: "blur(13px) saturate(100%)",
+    borderRadius:12
   },
 
   profileItems: {
@@ -30,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    // color: "white",
   },
   avatarInfo: {
     display: "flex",
@@ -70,7 +70,7 @@ const Profile = ({ isMobile,darkMode }) => {
   const classes = useStyles();
 
   return (
-    <Paper  elevation={3}>
+    <Paper  elevation={3} className={classes.root}>
      {!isMobile && (personalInfo.personalProfile.map((profile) => (
         <List  key={Math.random()} className={classes.profileItems}>
           <ListItem

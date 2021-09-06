@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: "3px 6px",
+    borderRadius: "12px",
   },
   missingOppositeContent: {
     "&:before": {

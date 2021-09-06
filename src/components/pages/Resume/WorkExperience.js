@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: "2px 5px",
-    // backgroundColor: "#222",
-    // color: "white",
+    borderRadius: "12px"
+  
   },
   opositeItem: {
     flex: 1,

@@ -9,6 +9,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { NavLink } from "react-router-dom";
 import { Drawer } from "@material-ui/core";
 import { useLocation } from "react-router";
+import { Paper } from "@material-ui/core";
 
 export const menuItems = [
   {
@@ -27,13 +28,17 @@ export const menuItems = [
 const drawerWidth = 100;
 
 const useStyles = makeStyles((theme) => ({
+  root:{
+  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
+    marginRight:'0.5rem'
   },
   drawerPaper: {
-    width: 90,
+    width: drawerWidth,
     marginLeft: 4,
+    borderRadius:12,
   },
 
   paperAnchorLeft: {
@@ -48,6 +53,11 @@ const useStyles = makeStyles((theme) => ({
 
  navItemsSelectedDark:{
    color:'#e65100',
+   borderRadius:10,
+   '&.active':{
+    backgroundColor: "rgba(122, 111, 92, 0.3)",
+    backdropFilter: "blur(13px) saturate(100%)",
+   },
    "& .MuiListItemIcon-root": {
     color:'#e65100'
   },
@@ -61,12 +71,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = ({ isMobile, darkMode, setDarkmode }) => {
+const Navbar = ({ isMobile}) => {
   const classes = useStyles();
-  // const theme = useTheme();
   const location = useLocation();
 
   return (
+    <Paper className={classes.root} elevation={3}>
     <Drawer
       variant="persistent"
       anchor="left"
@@ -78,9 +88,6 @@ const Navbar = ({ isMobile, darkMode, setDarkmode }) => {
       open={!isMobile}
     >
       <List component="nav" >
-        {/* <ListItem className={classes.navItems}>
-          <DarkModeSwitch darkMode={darkMode} setDarkmode={setDarkmode} isMobile={isMobile}/>
-        </ListItem> */}
         {menuItems.map((item) => (
           <ListItem
             key={item.text}
@@ -100,6 +107,7 @@ const Navbar = ({ isMobile, darkMode, setDarkmode }) => {
         ))}
       </List>
     </Drawer>
+    </Paper>
   );
 };
 

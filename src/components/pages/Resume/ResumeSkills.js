@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "2px 5px",
     margin: "0 10px 10px 10px ",
     flex: 1,
+    borderRadius:12
   },
   dot: {
     marginRight: "8px",

@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     overflow: "hidden",
     height: "100%",
+    // backgroundColor: "rgba(180, 159, 115, 0.48)",
+    // backdropFilter: "blur(16px) saturate(180%)",
+    // borderRadius:12
   },
   rootPages: {
     height: "100vh",
