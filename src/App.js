@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Route, Switch } from "react-router-dom";
-import NavBar from "./components/layout/Header/NavBar";
-import Profile from "./components/layout/Header/Profile";
-import MobileProfile from "./components/layout/Header/MobileProfile";
+import NavBar from "./components/pages/NavBar";
+import Profile from "./components/pages/Profile/Profile";
+import MobileProfile from "./components/pages/Profile/MobileProfile";
 import Resume from "./components/pages/Resume/Resume";
 import Portfolio from "./components/pages/Portfolio/Portfolio";
 import { makeStyles, CssBaseline, Paper, Box } from "@material-ui/core";
@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
   },
-  switchBtn: {},
 }));
 
 const App = () => {
@@ -88,10 +87,10 @@ const App = () => {
             <Box>
               <Switch>
                 <Route exact path="/">
-                  <Resume darkMode={darkMode} setDarkmode={setDarkmode} />
+                  <Resume/>
                 </Route>
                 <Route path="/portfolio">
-                  <Portfolio isMobile={isMobile} />
+                  <Portfolio />
                 </Route>
               </Switch>
             </Box>

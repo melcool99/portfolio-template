@@ -1,4 +1,4 @@
-import { CardHeader, Zoom } from "@material-ui/core";
+import { CardHeader, Slide } from "@material-ui/core";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -59,7 +59,7 @@ const Portfolio = () => {
   const classes = useStyles();
   return (
     <>
-      <Zoom in timeout={{ enter: 500 }}>
+      <Slide direction="down" in timeout={{enter:500}}>
         <Grid container className={classes.root}>
           <Box  className={classes.titleHeader}>
             <Typography variant="h4" className={classes.titleHeaderText}>
@@ -104,7 +104,7 @@ const Portfolio = () => {
             ))}
           </Box>
         </Grid>
-      </Zoom>
+      </Slide>
     </>
   );
 };

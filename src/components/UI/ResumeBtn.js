@@ -5,7 +5,7 @@ const ResumeBtn = () => {
   const onDownload = () => {
     const link = document.createElement("a");
     link.download = `resume.pdf`;
-    link.href = '/Cv.pdf';
+    link.href = './resume.pdf';
     link.click();
   };
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
@@ -15,12 +14,10 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText  from "@material-ui/core/ListItemText";
 import  ListItemIcon  from "@material-ui/core/ListItemIcon";
-import SchoolIcon from "@material-ui/icons/School";
-import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import { minWidth } from "@material-ui/system";
 import ResumeBtn from "../../UI/ResumeBtn";
 import { personalInfo } from "../../data/personalInfo";
-import { menuItems } from "./NavBar";
+import { menuItems } from "../NavBar";
 import { NavLink } from "react-router-dom";
 const drawerWidth =minWidth
 
@@ -63,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
 
 const MobileProfile = ({openMenu, handleOpenMenu, isMobile}) => {
   const classes = useStyles();
-  const history = useHistory()
  
   return (
     <>
