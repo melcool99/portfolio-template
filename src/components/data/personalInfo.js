@@ -44,7 +44,7 @@ export const personalInfo = {
   jobs: [
     {
       id: "job1",
-      title: "Web Developer",
+      title: "Co-Founder",
       company: "VOLENA DESIGN S.R.L",
       year: {
         start: "2018",
@@ -52,12 +52,45 @@ export const personalInfo = {
       },
       city: "Bucharest",
       description: `
-        Daily website maintenance & updating in a timely fashion.
-        Customer database management.
-        Custom API integrations.`,
+        Daily website maintenance;
+        Customer database management;
+        Custom API integrations;`,
     },
     {
       id: "job2",
+      title: "Online Poker Player",
+      company: "PokerStars",
+      year: {
+        start: "2015",
+        end: "2020",
+      },
+      city: "Bucharest",
+      description: `
+      Applied mathematically-based poker decisions following statistics;
+      Used PostrgreSql software for database management and gameplay improvement analysis sessions(PokerTracker4);
+      Studied game theory optimal approaches using analysis software solutions(PioSOLVER);
+      Maintained a balanced mental approach for long poker sessions.`,
+
+    },
+    {
+      id: "job3",
+      title: "Online Selling Amazon FBA",
+      company: "Amazon",
+      year: {
+        start: "2017",
+        end: "2019",
+      },
+      city: "Bucharest",
+      description: `
+      Developed and launched a fitness products brand;
+      Performed market research using different software programs (Jungle Scout, Google Trends, Keyword Tracker);
+      Established and maintained contact with product manufacturers in China;
+      Responsible for quality-check and shipping to Amazon warehouses in the USA;
+      Handled the search engine optimization and promoted the product page;
+      Managed customer service, sales, and inventory in Amazon Seller Central.`,
+    },
+    {
+      id: "job",
       title: "Sales Analyst",
       company: "S.C. 2 TIMPI S.R.L.",
       year: {
@@ -66,10 +99,9 @@ export const personalInfo = {
       },
       city: "Slatina",
       description: `  
-        Developed and implemented commercial strategies according to company goals and objectives aimed to accelerate growth.
-        Managed the day to day business operations, with an initial focus on sales.
-        Conducted market research and analysis to create detailed business plans on commercial opportunities (expansion, business development).
-        Maintained good relationships with all suppliers in the market.
+        Developed and implemented commercial strategies according to company goals and objectives aimed to accelerate growth;
+        Managed the day-to-day business operations, with an initial focus on sales;
+        Market analysis and research to create business plans on commercial opportunities (expansion, business development).
         `,
     },
     {
@@ -82,11 +114,9 @@ export const personalInfo = {
       },
       city: "Bucharest",
       description: `
-        Implemented up-selling strategies for recommending accessories and complementary
-          purchases.
-        Trained and developed sales team associates in products, selling techniques,
-          and procedures.
-        Expanded portfolio of buyers.`,
+      Worked closely with the owner to improve quality standards for customer satisfaction;
+      Was trusted with special projects to help my team sell better and be more motivated;
+      Maintained good connections with all suppliers in the market.`,
     },
     {
       id: "job4",
@@ -97,16 +127,16 @@ export const personalInfo = {
         end: "2013",
       },
       city: "Slatina",
-      description: `Managed and optimized the contract database.
-        Analyzed and processed returns assisting customers with finding alternative merchandise
-        to meet needs.
+      description: `Managed and optimized the contract database;
+        Analyzed and processed returns;
         Advised clients on how to obtain loans.`,
     },
   ],
 
   skills: {
     codingSkills: [
-      { id:'skills1',
+      {
+        id: "skills1",
         category: "Front-End",
         languages: [
           "HTML5",
@@ -119,39 +149,42 @@ export const personalInfo = {
         ],
       },
 
-      { id:'skills2',
+      {
+        id: "skills2",
         category: "Back-End",
         languages: ["Node.js", "Next.js", "Python"],
       },
-      { id:'skills3',
+      {
+        id: "skills3",
         category: "Databases",
         languages: ["PostgreSql", "MySql", "MongoDB"],
       },
-      { id:'skills4',
+      {
+        id: "skills4",
         category: "Source Control",
         languages: ["Git", "GitHub"],
       },
     ],
     languages: [
       {
-        id:'lang1',
+        id: "lang1",
         title: "English",
         level: "Professional Proficiency",
       },
       {
-        id:'lang2',
+        id: "lang2",
         title: "French",
         level: "Basic",
       },
     ],
     softSkills: [
-        `Highly motivated`,
-        `Results and solutions-oriented`,
-        `Great ability to work with a team`,
-        `Excellent communication skills`,
-        `Research oriented`,
-        `Problem solver`,
-      ],
+      `Highly motivated;`,
+      `Results and solutions-oriented;`,
+      `Great ability to work with a team;`,
+      `Excellent communication skills;`,
+      `Research oriented;`,
+      `Problem solver;`,
+    ],
 
     courses: [
       {
@@ -174,36 +207,43 @@ export const personalInfo = {
     ],
   },
 
-  projects:[
-    
+  projects: [
     {
-      title:'Food Order ',
-      githubUrl:"https://github.com/melcool99/food-order-app",
-      url:'https://mlc-foodorder.netlify.app/',
-      image:'https://source.unsplash.com/featured/?food',
-      description:'Food Order mockup in React, using Firebase'
+      title: "Food Order ",
+      githubUrl: "https://github.com/melcool99/food-order-app",
+      url: "https://mlc-foodorder.netlify.app/",
+      image: "https://source.unsplash.com/featured/?food",
+      description: "Food Order mockup in React, using Firebase",
     },
     {
-      title:'Weather App',
-      githubUrl:"https://github.com/melcool99/weather-app",
-      url:'https://mlc-weather.netlify.app/',
-      image:'https://source.unsplash.com/featured/?weather',
-      description:`Vanilla JavScript weather application using OpenWeather free API's and Netlifly serverless functions`,
+      title: "Weather App",
+      githubUrl: "https://github.com/melcool99/weather-app",
+      url: "https://mlc-weather.netlify.app/",
+      image: "https://source.unsplash.com/featured/?weather",
+      description: `Vanilla JavScript weather application using OpenWeather free API's and Netlifly serverless functions`,
     },
     {
-      title:'Robofriends',
-      githubUrl:"https://github.com/melcool99/robofriends",
-      url:'https://melcool99.github.io/robofriends/',
-      image:'https://source.unsplash.com/featured/?robots',
-      description:'Search your robot'
+      title: "Robofriends",
+      githubUrl: "https://github.com/melcool99/robofriends",
+      url: "https://melcool99.github.io/robofriends/",
+      image: "https://source.unsplash.com/featured/?robots",
+      description: "Search your robot",
     },
     {
-      title:'Portfolio Template',
-      githubUrl:"https://github.com/melcool99/portfolio-template",
-      url:'https://cristianvlad.netlify.app/',
-      image:'https://source.unsplash.com/featured/?resume',
-      description:'Portfolio template using React and Material UI '
+      title: "Portfolio Template",
+      githubUrl: "https://github.com/melcool99/portfolio-template",
+      url: "https://cristianvlad.netlify.app/",
+      image: "https://source.unsplash.com/featured/?resume",
+      description: "Portfolio template using React and Material UI ",
     },
   ],
-  hobbies:['Technology', 'Gadgets', 'Crypto','Blockchain', 'Football', 'Video Games',]
+  hobbies: [
+    "Technology",
+    "Gadgets",
+    "Crypto",
+    "Blockchain",
+    "Football",
+    "Video Games",
+    "Poker",
+  ],
 };
