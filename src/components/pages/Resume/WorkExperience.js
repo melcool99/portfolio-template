@@ -73,7 +73,7 @@ const WorkExperience = (props) => {
                     <Typography variant="body1" color="primary" style={{fontWeight:'bold'}}>
                       {job.title}
                     </Typography>
-                    {job.description.split(".").map((job) => (
+                    {job.description.split(";").map((job) => (
                       <List
                         classes={{ root: classes.listPadding }}
                         key={Math.random()}

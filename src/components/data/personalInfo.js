@@ -85,7 +85,7 @@ export const personalInfo = {
       Developed and launched a fitness products brand;
       Performed market research using different software programs (Jungle Scout, Google Trends, Keyword Tracker);
       Established and maintained contact with product manufacturers in China;
-      Supervised product quality-check and shipping to Amazon warehouses in the USA;;
+      Supervised product quality-check and shipping to Amazon warehouses in the USA;
       Handled the search engine optimization and promoted the product page;
       Managed customer service, sales, and inventory in Amazon Seller Central.`,
     },
