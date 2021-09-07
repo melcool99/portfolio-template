@@ -199,10 +199,10 @@ export const personalInfo = {
     },
     {
       title:'Portfolio Template',
-      githubUrl:"https://github.com/melcool99/robofriends",
-      url:'https://melcool99.github.io/robofriends/',
+      githubUrl:"https://github.com/melcool99/portfolio-template",
+      url:'https://cristianvlad.netlify.app/',
       image:'https://source.unsplash.com/featured/?resume',
-      description:'React portfolio template using Material UI '
+      description:'Portfolio template using React and Material UI '
     },
   ],
   hobbies:['Technology', 'Gadgets', 'Crypto','Blockchain', 'Football', 'Video Games',]
