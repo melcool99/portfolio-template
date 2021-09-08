@@ -4,7 +4,7 @@ import Education from "./Education";
 import { makeStyles } from "@material-ui/core/styles";
 import {Grid } from "@material-ui/core";
 import WorkExperience from "./WorkExperience";
-import { Slide } from "@material-ui/core";
+import { Zoom } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,10 +26,10 @@ const Resume = () => {
 
   return (
   
-      <Slide in direction="down" timeout={{enter:500}}>
+      <Zoom in  timeout={{enter:500, exit:300}}>
     <Grid container className={classes.root}>
       <Grid item className={classes.rootItems} md={6} lg={6} sm={6} xs={12}>
-      <Education classes={classes.paper} />
+        <Education classes={classes.paper} />
         <WorkExperience classes={classes.paper} />
       </Grid>
       <Grid item className={classes.rootItems} md={6} lg={6} sm={6} xs={12}>
@@ -37,7 +37,7 @@ const Resume = () => {
         <ResumeSkills  />
       </Grid>
     </Grid>
-      </Slide>
+      </Zoom>
   );
 };
 

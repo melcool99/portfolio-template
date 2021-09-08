@@ -73,7 +73,7 @@ const WorkExperience = (props) => {
                     <Typography variant="body1" color="primary" style={{fontWeight:'bold'}}>
                       {job.title}
                     </Typography>
-                    {job.description.split(";").map((job) => (
+                    {job.description.map((job) => (
                       <List
                         classes={{ root: classes.listPadding }}
                         key={Math.random()}
@@ -118,7 +118,7 @@ const WorkExperience = (props) => {
                 <TimelineContent classes={{ root: classes.timelineContent }}>
                   <Paper elevation={3} className={classes.paper}>
                     <Typography variant="body1" style={{fontWeight:'bold'}} color='primary'>{job.title}</Typography>
-                    {job.description.split(".").map((job) => (
+                    {job.description.map((job) => (
                       <Typography variant="body1" key={Math.random()}>
                         {job}
                       </Typography>

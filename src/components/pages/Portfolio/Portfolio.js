@@ -1,4 +1,4 @@
-import { CardHeader, Slide } from "@material-ui/core";
+import { CardHeader, Typography, Zoom } from "@material-ui/core";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -6,7 +6,6 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardMedia from "@material-ui/core/CardMedia";
 import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
 import { Grid, Box } from "@material-ui/core";
 import { personalInfo } from "../../data/personalInfo";
 import GitHub from "@material-ui/icons/GitHub";
@@ -43,11 +42,9 @@ const useStyles = makeStyles({
   titleHeader: {
     display: "flex",
     justifyContent: "center",
+    fontWeight:700
   },
-  titleHeaderText: {
-    fontWeight: 600,
-  },
-
+ 
   cardContainer: {
     display: "flex",
     justifyContent: "center",
@@ -59,13 +56,11 @@ const Portfolio = () => {
   const classes = useStyles();
   return (
     <>
-      <Slide direction="down" in timeout={{enter:500}}>
+      <Zoom  in timeout={{enter:500, exit:500}}>
         <Grid container className={classes.root}>
-          <Box  className={classes.titleHeader}>
-            <Typography variant="h4" className={classes.titleHeaderText}>
-              Portfolio
+          <Typography variant ='h4'className={classes.titleHeader}>
+            Portfolio
             </Typography>
-          </Box>
           <Box className={classes.cardContainer}>
             {personalInfo.projects.map((project) => (
               <Card
@@ -104,7 +99,7 @@ const Portfolio = () => {
             ))}
           </Box>
         </Grid>
-      </Slide>
+      </Zoom>
     </>
   );
 };

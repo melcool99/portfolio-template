@@ -12,6 +12,7 @@ import { useLocation } from "react-router";
 import { Paper } from "@material-ui/core";
 
 export const menuItems = [
+ 
   {
     text: "Resume",
     icon: <SchoolIcon />,
@@ -55,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
    color:'#e65100',
    borderRadius:10,
    '&.active':{
-    backgroundColor: "rgba(122, 111, 92, 0.3)",
+    backgroundColor: "rgba(0,0,0,0)",
     backdropFilter: "blur(13px) saturate(100%)",
    },
    "& .MuiListItemIcon-root": {

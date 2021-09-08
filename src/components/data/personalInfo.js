@@ -3,7 +3,7 @@ export const personalInfo = {
     {
       firstName: "Cristian",
       lastName: "Vlad",
-      occupation: "Web Developer",
+      occupation: "Frontend Developer",
       city: "Bucharest",
       country: "Romania",
       email: "vladcristian84@gmail.com",
@@ -51,10 +51,10 @@ export const personalInfo = {
         end: "Present",
       },
       city: "Bucharest",
-      description: `
-        Daily website maintenance;
-        Customer database management;
-        Custom API integrations;`,
+      description: [
+       " Daily website maintenance.",
+        "Customer database management.",
+        "Custom API integrations."],
     },
     {
       id: "job2",
@@ -65,11 +65,12 @@ export const personalInfo = {
         end: "2020",
       },
       city: "Bucharest",
-      description: `
-      Applied mathematically-based poker decisions following statistics;
-      Used PostrgreSql software for database management and gameplay improvement analysis sessions(PokerTracker4);
-      Studied game theory optimal approaches using analysis software solutions(PioSOLVER);
-      Maintained a balanced mental approach for long poker sessions.`,
+      description: [
+      "Applied mathematically-based poker decisions following statistics.",
+      "Used PostrgreSql software for database management and gameplay improvement analysis sessions(PokerTracker4).",
+      "Studied game theory optimal approaches using analysis software solutions(PioSOLVER).",
+      "Maintained a balanced mental approach for long poker sessions.",
+    ],
 
     },
     {
@@ -81,16 +82,17 @@ export const personalInfo = {
         end: "2019",
       },
       city: "Bucharest",
-      description: `
-      Developed and launched a fitness products brand;
-      Performed market research using different software programs (Jungle Scout, Google Trends, Keyword Tracker);
-      Established and maintained contact with product manufacturers in China;
-      Supervised product quality-check and shipping to Amazon warehouses in the USA;
-      Handled the search engine optimization and promoted the product page;
-      Managed customer service, sales, and inventory in Amazon Seller Central.`,
+      description: [
+      "Developed and launched a fitness products brand.",
+     " Performed market research using different software programs (Jungle Scout, Google Trends, Keyword Tracker).",
+      "Established and maintained contact with product manufacturers in China.",
+      "Supervised product quality-check and shipping to Amazon warehouses in the USA.",
+      "Handled the search engine optimization and promoted the product page.",
+      "Managed customer service, sales, and inventory in Amazon Seller Central.",
+    ],
     },
     {
-      id: "job",
+      id: "job4",
       title: "Sales Analyst",
       company: "S.C. 2 TIMPI S.R.L.",
       year: {
@@ -98,28 +100,30 @@ export const personalInfo = {
         end: "2016",
       },
       city: "Slatina",
-      description: `  
-        Developed and implemented commercial strategies according to company goals and objectives aimed to accelerate growth;
-        Managed the day-to-day business operations, with an initial focus on sales;
-        Market analysis and research to create business plans on commercial opportunities (expansion, business development).
-        `,
+      description: [
+       " Developed and implemented commercial strategies according to company goals and objectives aimed to accelerate growth.",
+        "Managed the day-to-day business operations, with an initial focus on sales.",
+        "Market analysis and research to create business plans on commercial opportunities (expansion, business development).",
+        ],
     },
     {
-      id: "job3",
+      id: "job5",
       title: "Senior Sales Agent",
       company: "ALEEA TRADING S.R.L.",
       year: {
         start: "2014",
-        end: "2015",
+        end: "2014",
       },
       city: "Bucharest",
-      description: `
-      Worked closely with the owner to improve quality standards for customer satisfaction;
-      Was trusted with special projects to help my team sell better and be more motivated;
-      Maintained good connections with all suppliers in the market.`,
+      description: [
+
+        "Worked closely with the owner to improve quality standards for customer satisfaction.",
+        "Was trusted with special projects to help my team sell better and be more motivated.",
+        "Maintained good connections with all suppliers in the market.",
+      ],
     },
     {
-      id: "job4",
+      id: "job6",
       title: "Pawnbroker Assistant",
       company: "ROGEF LUCKY GOLD IFN",
       year: {
@@ -127,9 +131,11 @@ export const personalInfo = {
         end: "2013",
       },
       city: "Slatina",
-      description: `Managed and optimized the contract database;
-        Analyzed and processed returns;
-        Advised clients on how to obtain loans.`,
+      description: [
+        "Managed and optimized the contract database.",
+        "Analyzed and processed returns.",
+        "Advised clients on how to obtain loans.",
+      ],
     },
   ],
 
@@ -143,7 +149,10 @@ export const personalInfo = {
           "CSS3",
           "Javascript",
           "React Js",
+          "React Hooks",
+          "React Router",
           "Redux",
+          "REST APIs",
           "Material UI",
           "Bootstrap",
         ],
@@ -157,7 +166,7 @@ export const personalInfo = {
       {
         id: "skills3",
         category: "Databases",
-        languages: ["PostgreSql", "MySql", "MongoDB"],
+        languages: ["PostgreSQL", "MySql"],
       },
       {
         id: "skills4",
@@ -178,31 +187,39 @@ export const personalInfo = {
       },
     ],
     softSkills: [
-      `Highly motivated;`,
-      `Results and solutions-oriented;`,
-      `Great ability to work with a team;`,
-      `Excellent communication skills;`,
-      `Research oriented;`,
-      `Problem solver;`,
+      `Highly motivated`,
+      `Analytical, proactive and creative thinking`,
+      `Results and solutions-oriented`,
+      `Great ability to work with a team`,
+      `Excellent communication skills`,
+      `Research oriented`,
+      `Problem solver`,
     ],
 
     courses: [
-      {
+      { id:'course1',
         title: `React - The Complete Guide (incl Hooks, React Router, Redux) - Academind`,
-        url: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25595454?start=15",
+        url: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/",
+        certificate:"https://www.udemy.com/certificate/UC-3a850640-b580-48db-abc6-d8f42eb7ff53/"
       },
-      {
+      { 
+        id:'course2',
         title: `The Complete Web Developer in 2021: Zero to Mastery - Zero To Mastery Academy`,
-        url: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-855c0a51-9124-486f-9c1c-d13e3871a8db.pdf",
+        url: "https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/",
+        certificate:"https://udemy-certificate.s3.amazonaws.com/pdf/UC-855c0a51-9124-486f-9c1c-d13e3871a8db.pdf",
       },
 
-      {
+      { 
+        id:'course3',
         title: `Complete Python Developer in 2021: Zero to Mastery - Zero To Mastery Academy`,
-        url: "https://www.udemy.com/certificate/UC-c839c267-f408-4552-a195-e1b7d59cd1bd/",
+        url: "https://www.udemy.com/course/complete-python-developer-zero-to-mastery/",
+        certificate:"https://www.udemy.com/certificate/UC-c839c267-f408-4552-a195-e1b7d59cd1bd/",
       },
       {
+        id:'course4',
         title: `Complete SQL + Databases Bootcamp: Zero to Mastery - Zero To Mastery Academy`,
-        url: "https://www.udemy.com/certificate/UC-dbba7d1c-c40b-4126-a187-14f40128458a/",
+        url: "https://www.udemy.com/course/complete-sql-databases-bootcamp-zero-to-mastery/",
+        certificate:"https://www.udemy.com/certificate/UC-dbba7d1c-c40b-4126-a187-14f40128458a/",
       },
     ],
   },

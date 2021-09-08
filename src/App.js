@@ -16,9 +16,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     overflow: "hidden",
     height: "100%",
-    // backgroundColor: "rgba(180, 159, 115, 0.48)",
-    // backdropFilter: "blur(16px) saturate(180%)",
-    // borderRadius:12
   },
   rootPages: {
     height: "100vh",
@@ -26,11 +23,22 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
   },
+  switchBtn: {
+    // alignSelf: "flex-end",
+    position: "fixed",
+    top: "5px",
+    right: "10px",
+    zIndex: 900,
+  },
+  switchBtnMobile:{
+    position: "fixed",
+    zIndex: 900,
+  }
 }));
 
 const App = () => {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const [darkMode, setDarkmode] = useState(true);
   const theme = createTheme({
     typography: {
@@ -71,16 +79,16 @@ const App = () => {
             />
           )}
           <MobileProfile
-            openMenu={open}
+            open={open}
             handleOpenMenu={handleOpenMenu}
             isMobile={isMobile}
           />
 
-          <Grid item md={3} lg={3} className={classes.aboutMe}>
+          <Grid item md={3} lg={3}>
             <Profile isMobile={isMobile} darkMode={darkMode} />
           </Grid>
           <Grid item className={classes.rootPages} xs>
-            <Box className={classes.switchBtn}>
+            <Box className={!isMobile ? classes.switchBtn : classes.switchBtnMobile}>
               <DarkModeSwitch
                 isMobile={isMobile}
                 setDarkmode={setDarkmode}
@@ -90,7 +98,7 @@ const App = () => {
             <Box>
               <Switch>
                 <Route exact path="/">
-                  <Resume/>
+                  <Resume />
                 </Route>
                 <Route path="/portfolio">
                   <Portfolio />

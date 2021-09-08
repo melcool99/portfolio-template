@@ -15,19 +15,18 @@ import EmailIcon from "@material-ui/icons/Email";
 import Footer from "../Footer";
 import { personalInfo } from "../../data/personalInfo";
 
-
-
 const useStyles = makeStyles((theme) => ({
-
-  root:{
+  root: {
     backgroundColor: "rgba(122, 111, 92, 0.3)",
     backdropFilter: "blur(13px) saturate(100%)",
-    borderRadius:12
+    borderRadius: 12,
+    height: "100vh",
+    width: "100%",
   },
 
   profileItems: {
     display: "flex",
-    height:'100vh',
+    height: "100vh",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
@@ -42,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
   contactInfo: {
     justifyContent: "center",
     flex: 1,
+
   },
 
   iconButton: {
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
       color: "white",
     },
   },
-  box: {
+  contactIcons: {
     padding: "10px",
   },
   footerStyle: {
@@ -64,44 +64,47 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     flex: 1,
   },
+  box: {
+    padding: "10px",
+  },
 }));
 
-const Profile = ({ isMobile,darkMode }) => {
+const Profile = ({ isMobile, darkMode }) => {
   const classes = useStyles();
 
   return (
-    <Paper  elevation={3} className={classes.root}>
-     {!isMobile && (personalInfo.personalProfile.map((profile) => (
-        <List  key={Math.random()} className={classes.profileItems}>
-          <ListItem
-            className={classes.avatarInfo}
-          >
-            <Avatar
-              alt="profile picture"
-              variant="circular"
-              src={pozaprf}
-              className={classes.avatarLarge}
-            />
-            <Typography variant="h4">
-              {profile.firstName} {profile.lastName}
-            </Typography>
-            <Typography variant="h5">{profile.occupation} </Typography>
-            <Box className={classes.iconButton}>
-              <IconButton
-                href={profile.socialMediaLinks.githubUrl}
-                target='_blank'
-              >
-                <GitHubIcon color='primary'/>
-              </IconButton>
-              <IconButton
-                href={profile.socialMediaLinks.linkedInUrl}
-                target='_blank'
-              >
-                <LinkedInIcon color='primary'/>
-              </IconButton>
-            </Box>
-          </ListItem>
-          <ListItem className={classes.contactInfo} >
+    <>
+      {!isMobile && (
+        <Paper className={classes.root}>
+          {personalInfo.personalProfile.map((profile) => (
+          <List key={Math.random()} className={classes.profileItems}>
+            <ListItem className={classes.avatarInfo}>
+              <Avatar
+                alt="profile picture"
+                variant="circular"
+                src={pozaprf}
+                className={classes.avatarLarge}
+              />
+              <Typography variant="h4">
+                {profile.firstName} {profile.lastName}
+              </Typography>
+              <Typography variant="h5">{profile.occupation} </Typography>
+              <Box className={classes.iconButton}>
+                <IconButton
+                  href={profile.socialMediaLinks.githubUrl}
+                  target="_blank"
+                >
+                  <GitHubIcon color="primary" />
+                </IconButton>
+                <IconButton
+                  href={profile.socialMediaLinks.linkedInUrl}
+                  target="_blank"
+                >
+                  <LinkedInIcon color="primary" />
+                </IconButton>
+              </Box>
+            </ListItem>
+            <ListItem className={classes.contactInfo} >
             <Box display="flex" flexDirection="column">
               <Box
                 display="flex"
@@ -109,7 +112,7 @@ const Profile = ({ isMobile,darkMode }) => {
                 classes={{ root: classes.box }}
               >
                 <PhoneIcon />
-                <Box style={{ marginLeft: "5px" }}>{profile.phone}</Box>
+                <Typography style={{ marginLeft: "5px" }}>{profile.phone}</Typography>
               </Box>
               <Box
                 display="flex"
@@ -117,22 +120,22 @@ const Profile = ({ isMobile,darkMode }) => {
                 classes={{ root: classes.box }}
               >
                 <EmailIcon />
-                <Box style={{ marginLeft: "5px" }}>{profile.email}</Box>
+                <Typography style={{ marginLeft: "5px" }}>{profile.email}</Typography>
               </Box>
             </Box>
           </ListItem>
-          <ListItem className={classes.butonItem} >
-            <ResumeBtn />
-          </ListItem>
-          <ListItem className={classes.footerStyle}>
-            <Footer />
-          </ListItem>
-        </List>
-      )))
-      }
-    </Paper>
+            <ListItem className={classes.butonItem}>
+              <ResumeBtn />
+            </ListItem>
+            <ListItem className={classes.footerStyle}>
+              <Footer />
+            </ListItem>
+          </List>
+          ))}
+        </Paper>
+      )}
+    </>
   );
 };
 
-
-export default Profile
+export default Profile;

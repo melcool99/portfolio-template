@@ -7,6 +7,7 @@ import {
   Chip,
   Link,
   Box,
+  List,
 } from "@material-ui/core";
 import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 import TimelineDot from "@material-ui/lab/TimelineDot";
@@ -19,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexDirection: "column",
     marginTop: "14px",
-
   },
   mainTitle: {
     display: "flex",
@@ -38,11 +38,15 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
   },
 
+  coursesCertificate: {
+    justifyContent: "flex-end",
+  },
+
   stylePaper: {
     padding: "2px 5px",
     margin: "0 10px 10px 10px ",
     flex: 1,
-    borderRadius:12
+    borderRadius: 12,
   },
   dot: {
     marginRight: "8px",
@@ -67,9 +71,9 @@ const ResumeSkills = (props) => {
   return (
     <>
       <Grid container className={classes.root}>
-      <Typography variant="h5" className={classes.mainTitle}>
-        Skills
-      </Typography>
+        <Typography variant="h5" className={classes.mainTitle}>
+          Skills
+        </Typography>
         <Paper className={classes.stylePaper} elevation={3}>
           <Typography variant="h6" style={{ fontWeight: "bold" }}>
             Programming Skills
@@ -113,15 +117,14 @@ const ResumeSkills = (props) => {
             Soft Skills
           </Typography>
           {personalInfo.skills.softSkills.map((skill) => (
-              <ListItem dense key={`${skill} ${Math.random()}`}>
-                <TimelineDot
-                  variant="outlined"
-                  color="primary"
-                  className={classes.dot}
-                />
-                <Typography variant={contentSize}>{skill}</Typography>
-              </ListItem>
-            
+            <ListItem dense key={`${skill} ${Math.random()}`}>
+              <TimelineDot
+                variant="outlined"
+                color="primary"
+                className={classes.dot}
+              />
+              <Typography variant={contentSize}>{skill}</Typography>
+            </ListItem>
           ))}
         </Paper>
 
@@ -130,7 +133,7 @@ const ResumeSkills = (props) => {
             Courses & Certifications
           </Typography>
           {personalInfo.skills.courses.map((course) => (
-            
+            <List key={course.id}>
               <ListItem dense key={course.url}>
                 <TimelineDot
                   variant="outlined"
@@ -150,23 +153,37 @@ const ResumeSkills = (props) => {
                   </Link>
                 </Typography>
               </ListItem>
+              <ListItem className={!isMobile ? classes.coursesCertificate :''}>
+                <Typography variant="subtitle2" color="secondary">
+                  <Link
+                    href={course.certificate}
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="inherit"
+                    color="inherit"
+                  >
+                    See Certificate
+                  </Link>
+                </Typography>
+              </ListItem>
+            </List>
           ))}
         </Paper>
         <Paper className={clsx(classes.stylePaper)} elevation={3}>
           <Box>
-            <Typography variant="h6" style={{ fontWeight: "bold"}}>
+            <Typography variant="h6" style={{ fontWeight: "bold" }}>
               Hobbies
             </Typography>
           </Box>
           <Box className={classes.hobbies}>
             {personalInfo.hobbies.map((hobbie) => (
-                <Chip
-                  key={hobbie}
-                  label={hobbie}
-                  variant="outlined"
-                  color="secondary"
-                  classes={{ root: classes.chip }}
-                />
+              <Chip
+                key={hobbie}
+                label={hobbie}
+                variant="outlined"
+                color="secondary"
+                classes={{ root: classes.chip }}
+              />
             ))}
           </Box>
         </Paper>

@@ -8,140 +8,157 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import IconButton from "@material-ui/core/IconButton";
 import PhoneIcon from "@material-ui/icons/Phone";
 import EmailIcon from "@material-ui/icons/Email";
-import  Box from "@material-ui/core/Box";
-import Drawer from "@material-ui/core/Drawer"
+import Box from "@material-ui/core/Box";
+import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText  from "@material-ui/core/ListItemText";
-import  ListItemIcon  from "@material-ui/core/ListItemIcon";
-import { minWidth } from "@material-ui/system";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ResumeBtn from "../../UI/ResumeBtn";
 import { personalInfo } from "../../data/personalInfo";
 import { menuItems } from "../NavBar";
 import { NavLink } from "react-router-dom";
-const drawerWidth =minWidth
+import { useLocation } from "react-router";
+
 
 const useStyles = makeStyles((theme) => ({
-  
-
-  socialMedia:{
-    justifyContent:'center',
-    flex:1
-  },
+ 
   drawer: {
-    width: drawerWidth,
+    width: "100%",
     flexShrink: 0,
-    
-    
-  },
-  listContainer:{
-    height:'100vh',
-    justifyContent:'center',
-    display:'flex',
-    flexDirection:'column',
-  
   },
   drawerPaper: {
-    width: drawerWidth,
-    
+    width: "100%",
+    backgroundColor: "rgba(122, 111, 92, 0.5)",
+    backdropFilter: "blur(20px) saturate(180%)",
   },
+  listContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+  },
+
+  navItems:{
+    display: "flex", 
+    flexDirection: "column",
+  },
+
+  socialMediaLinks:{
+    justifyContent:'center',
+  },
+
   avatarLarge: {
     width: theme.spacing(15),
     height: theme.spacing(15),
-   
-  },
-  avatarStyle:{
-    justifyContent:'center'
+    
   },
 
-
+  navItemsSelectedDark: {
+    color: "#e65100",
+    "&.active": {
+      backgroundColor: "rgba(0, 0, 0, 0)",
+    },
+    "& .MuiListItemIcon-root": {
+      color: "#e65100",
+    },
+    "&:hover": {
+      color: "white",
+    },
+  },
 }));
 
-
-const MobileProfile = ({openMenu, handleOpenMenu, isMobile}) => {
+const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
   const classes = useStyles();
- 
+  const location = useLocation();
+
   return (
     <>
-   {isMobile &&
-      <Drawer 
-       variant="temporary"
-       anchor="left"
-       className={classes.drawer}
-       classes={{paper: classes.drawerPaper}}
-       open={openMenu}
-       onClose={handleOpenMenu}
-      >
-      {personalInfo.personalProfile.map((profile) =>(
-        <List key={Math.random()} className={classes.listContainer}>
-          <ListItem  className={classes.avatarStyle}>
-          <Avatar
-            alt="profile picture"
-            variant="circular"
-            src={pozaprf}
-            className={classes.avatarLarge}
-          />
-          </ListItem>
-          <ListItem >
-          <ListItemText >
-          <Typography
-            display="block"
-            variant="h4"
-            align="center"
-          >
-            {profile.firstName} {profile.lastName}
-          </Typography>
-          <Typography
-            display="block"
-            variant="h6"
-            gutterBottom
-            align="center"
-          >
-            {profile.occupation}
-          </Typography>
-          </ListItemText>
-          </ListItem>
-          {menuItems.map((item) => (
-            <ListItem button component={NavLink} to={item.path}
-            onClick={handleOpenMenu}
-            key={item.text}
-            > 
-            <ListItemIcon >
-              {item.icon}
-            </ListItemIcon>
-            <ListItemText primary={item.text} />
-          </ListItem>
-          ))  }
-            <ListItem button>
-              <ListItemIcon >
-                <EmailIcon />
-              </ListItemIcon>
-              <ListItemText primary={profile.email} />
-            </ListItem>
-            <ListItem button color='primary'>
-              <ListItemIcon>
-                <PhoneIcon />
-              </ListItemIcon>
-              <ListItemText primary={profile.phone} />
-            </ListItem>
-          <ListItem className={classes.socialMedia}  >
-          <Box>
-            <IconButton
-              color="primary"
-              href={profile.socialMediaLinks.linkedInUrl}
-              target='_blank'
-            >
-              <LinkedInIcon />
-            </IconButton>
-            <IconButton color="primary" href={profile.socialMediaLinks.githubUrl} target='_blank'>
-              <GitHubIcon />
-            </IconButton>
-            <ResumeBtn/>
-          </Box>
-          </ListItem>
-      </List>
-      ))}
-      </Drawer>}
+      {isMobile && (
+        <Drawer
+          variant="temporary"
+          anchor="left"
+          className={classes.drawer}
+          classes={{ paper: classes.drawerPaper }}
+          open={open}
+          onClose={handleOpenMenu}
+        >
+          {personalInfo.personalProfile.map((profile) => (
+          <List key={Math.random()} className={classes.listContainer}>
+              <ListItem className={classes.navItems}>
+                <Avatar
+                  alt="profile picture"
+                  variant="circular"
+                  src={pozaprf}
+                  className={classes.avatarLarge}
+                />
+                <ListItemText>
+                  <Typography variant="h4" >
+                    {profile.firstName} {profile.lastName}
+                  </Typography>
+                </ListItemText>
+                <ListItemText>
+                  <Typography variant="h6"  >
+                    {profile.occupation}
+                  </Typography>
+                </ListItemText>
+              </ListItem>
+               <Box>
+                 {menuItems.map((item) => (
+                   <ListItem 
+                   button
+                   component={NavLink}
+                    to={item.path}
+                    onClick={handleOpenMenu}
+                    key={item.text}
+                    selected = {item.path === location.pathname}
+                    classes= {{selected:classes.navItemsSelectedDark}}>
+                      <ListItemIcon>
+                        {item.icon}
+                      </ListItemIcon>
+                     <ListItemText>
+                       <Typography>
+                         {item.text}
+                       </Typography>
+                     </ListItemText>
+                   </ListItem>
+                 ))}
+                 <ListItem>
+                  <ListItemIcon>
+                    <EmailIcon />
+                  </ListItemIcon>
+                  <Typography>{profile.email}</Typography>
+                  </ListItem>
+                  <ListItem >
+                  <ListItemIcon>
+                    <PhoneIcon />
+                  </ListItemIcon>
+                  <Typography>{profile.phone}</Typography>
+                  </ListItem>
+                  <ListItem className={classes.socialMediaLinks}>
+                    <IconButton
+                      color="primary"
+                      href={profile.socialMediaLinks.linkedInUrl}
+                      target="_blank"
+                    >
+                      <LinkedInIcon />
+                    </IconButton>
+                    <IconButton
+                      color="primary"
+                      href={profile.socialMediaLinks.githubUrl}
+                      target="_blank"
+                    >
+                      <GitHubIcon />
+                    </IconButton>
+                  </ListItem>
+                    <ListItem  className={classes.socialMediaLinks}>
+                    <ResumeBtn />
+                    </ListItem>
+               </Box>
+             </List>))}
+         
+        </Drawer>
+      )}
     </>
   );
 };

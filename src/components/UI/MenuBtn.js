@@ -8,8 +8,8 @@ import MenuIcon from "@material-ui/icons/Menu";
 const useStyles = makeStyles((theme) => ({
   menuBtn: {
     position: "fixed",
-    top: "4px",
-    right: "15px",
+    top: "5px",
+    right: "5px",
     zIndex: 900,
     "&:hover": {
       opacity: 0.5,
