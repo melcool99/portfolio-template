@@ -124,19 +124,30 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
                      </ListItemText>
                    </ListItem>
                  ))}
-                 <ListItem>
-                  <ListItemIcon>
+                 <ListItem button 
+                  onClick={() => {
+                    const link = document.createElement("a");
+                    link.href = `mailto:${profile.email}`;
+                    link.click();
+                  }}
+                   >
+                  <ListItemIcon >
                     <EmailIcon />
                   </ListItemIcon>
                   <Typography style={{fontWeight:500}}>{profile.email}</Typography>
                   </ListItem>
-                  <ListItem >
+                  <ListItem button 
+                  onClick={() => {
+                    const link = document.createElement("a");
+                    link.href = `tel:${profile.phone}`;
+                    link.click();
+                  }}>
                   <ListItemIcon>
                     <PhoneIcon />
                   </ListItemIcon>
                   <Typography style={{fontWeight:500}}>{profile.phone}</Typography>
                   </ListItem>
-                  <ListItem className={classes.socialMediaLinks}>
+                  <ListItem className={classes.socialMediaLinks} >
                     <IconButton
                       color="primary"
                       href={profile.socialMediaLinks.linkedInUrl}

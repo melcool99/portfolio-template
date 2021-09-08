@@ -11,6 +11,7 @@ import { useMediaQuery } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import MenuBtn from "./components/UI/MenuBtn";
 import DarkModeSwitch from "./components/UI/DarkModeSwitch";
+import PageNotFound from "./components/pages/PageNotFound";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   switchBtn: {
-    // alignSelf: "flex-end",
     position: "fixed",
     top: "5px",
     right: "10px",
@@ -103,6 +103,7 @@ const App = () => {
                 <Route path="/portfolio">
                   <Portfolio />
                 </Route>
+                <Route path='*' component={PageNotFound}/>
               </Switch>
             </Box>
           </Grid>
