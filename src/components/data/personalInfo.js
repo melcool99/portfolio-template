@@ -226,6 +226,13 @@ export const personalInfo = {
 
   projects: [
     {
+      title: "Portfolio Template",
+      githubUrl: "https://github.com/melcool99/portfolio-template",
+      url: "https://cristianvlad.netlify.app/",
+      image: "https://source.unsplash.com/featured/?resume",
+      description: "Portfolio template using React and Material UI ",
+    },
+    {
       title: "Food Order ",
       githubUrl: "https://github.com/melcool99/food-order-app",
       url: "https://mlc-foodorder.netlify.app/",
@@ -245,13 +252,6 @@ export const personalInfo = {
       url: "https://melcool99.github.io/robofriends/",
       image: "https://source.unsplash.com/featured/?robots",
       description: "Search your robot",
-    },
-    {
-      title: "Portfolio Template",
-      githubUrl: "https://github.com/melcool99/portfolio-template",
-      url: "https://cristianvlad.netlify.app/",
-      image: "https://source.unsplash.com/featured/?resume",
-      description: "Portfolio template using React and Material UI ",
     },
   ],
   hobbies: [

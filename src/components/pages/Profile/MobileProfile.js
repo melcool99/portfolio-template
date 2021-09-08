@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
   navItems:{
     display: "flex", 
     flexDirection: "column",
+    
   },
 
   socialMediaLinks:{
@@ -93,12 +94,12 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
                   className={classes.avatarLarge}
                 />
                 <ListItemText>
-                  <Typography variant="h4" >
+                  <Typography variant="h4" style={{fontWeight:700}} >
                     {profile.firstName} {profile.lastName}
                   </Typography>
                 </ListItemText>
                 <ListItemText>
-                  <Typography variant="h6"  >
+                  <Typography variant="h6"  style={{fontWeight:700}}>
                     {profile.occupation}
                   </Typography>
                 </ListItemText>
@@ -117,7 +118,7 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
                         {item.icon}
                       </ListItemIcon>
                      <ListItemText>
-                       <Typography>
+                       <Typography style={{fontWeight:700}}>
                          {item.text}
                        </Typography>
                      </ListItemText>
@@ -127,13 +128,13 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
                   <ListItemIcon>
                     <EmailIcon />
                   </ListItemIcon>
-                  <Typography>{profile.email}</Typography>
+                  <Typography style={{fontWeight:500}}>{profile.email}</Typography>
                   </ListItem>
                   <ListItem >
                   <ListItemIcon>
                     <PhoneIcon />
                   </ListItemIcon>
-                  <Typography>{profile.phone}</Typography>
+                  <Typography style={{fontWeight:500}}>{profile.phone}</Typography>
                   </ListItem>
                   <ListItem className={classes.socialMediaLinks}>
                     <IconButton
