@@ -235,7 +235,7 @@ export const personalInfo = {
     {
       title: "Great Quotes",
       githubUrl:"https://github.com/melcool99/Great-Quotes",
-      url:'',
+      url:'https://mlc-greatquotes.netlify.app/quotes',
       image:"https://source.unsplash.com/featured/?quotes",
       description:'Quotes page with React Redux and Firebase API '
     },
