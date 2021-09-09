@@ -229,8 +229,15 @@ export const personalInfo = {
       title: "Portfolio Template",
       githubUrl: "https://github.com/melcool99/portfolio-template",
       url: "https://cristianvlad.netlify.app/",
-      image: "https://source.unsplash.com/featured/?resume",
+      image: "https://source.unsplash.com/featured/?office",
       description: "Portfolio template using React and Material UI ",
+    },
+    {
+      title: "Great Quotes",
+      githubUrl:"https://github.com/melcool99/Great-Quotes",
+      url:'',
+      image:"https://source.unsplash.com/featured/?quotes",
+      description:'Quotes page with React Redux and Firebase API '
     },
     {
       title: "Food Order ",
