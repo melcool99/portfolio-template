@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
   },
   switchBtn: {
     position: "fixed",
-    top: "5px",
     right: "10px",
     zIndex: 900,
   },
