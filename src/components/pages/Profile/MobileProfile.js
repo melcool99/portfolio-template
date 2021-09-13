@@ -74,9 +74,11 @@ const useStyles = makeStyles((theme) => ({
 const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
   const classes = useStyles();
   const location = useLocation();
+  
   const onClickHandler = (e) => {
     const link = document.createElement("a");
-    link.href = `tel:${e.target.innerText}`;
+    const linkTo = e.target.innerText.includes('@') ? 'mailto' : 'tel'
+    link.href = `${linkTo}:${e.target.innerText}`;
     link.click();
    }
 

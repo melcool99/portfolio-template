@@ -69,13 +69,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Profile = ({ isMobile, darkMode }) => {
+const Profile = ({ isMobile }) => {
   const classes = useStyles();
 
   
  const onClickHandler = (e) => {
+  const linkTo = e.target.innerText.includes('@') ? 'mailto' : 'tel'
   const link = document.createElement("a");
-  link.href = `tel:${e.target.innerText}`;
+  link.href = `${linkTo}:${e.target.innerText}`;
   link.click();
  }
  
