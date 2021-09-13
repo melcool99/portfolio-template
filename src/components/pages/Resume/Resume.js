@@ -27,11 +27,11 @@ const Resume = () => {
     <Zoom in timeout={{ enter: 500, exit: 300 }}>
       <Grid container className={classes.root}>
         <Grid item className={classes.rootItems} md={6} lg={6} sm={6} xs={12}>
-          <ResumeSkills />
-        </Grid>
-        <Grid item className={classes.rootItems} md={6} lg={6} sm={6} xs={12}>
           <Education classes={classes.paper} />
           <WorkExperience classes={classes.paper} />
+        </Grid>
+        <Grid item className={classes.rootItems} md={6} lg={6} sm={6} xs={12}>
+          <ResumeSkills />
         </Grid>
       </Grid>
     </Zoom>

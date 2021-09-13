@@ -57,9 +57,9 @@ const useStyles = makeStyles((theme) => ({
 
   navItemsSelectedDark: {
     color: "#e65100",
-    "&.active": {
-      backgroundColor: "rgba(0, 0, 0, 0)",
-    },
+    // "&.active": {
+    //   backgroundColor: "rgba(0, 0, 0, 0)",
+    // },
     "& .MuiListItemIcon-root": {
       color: "#e65100",
     },
@@ -67,11 +67,18 @@ const useStyles = makeStyles((theme) => ({
       color: "white",
     },
   },
+
+ 
 }));
 
 const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
   const classes = useStyles();
   const location = useLocation();
+  const onClickHandler = (e) => {
+    const link = document.createElement("a");
+    link.href = `tel:${e.target.innerText}`;
+    link.click();
+   }
 
   return (
     <>
@@ -113,7 +120,10 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
                     onClick={handleOpenMenu}
                     key={item.text}
                     selected = {item.path === location.pathname}
-                    classes= {{selected:classes.navItemsSelectedDark}}>
+                    classes= {{selected:classes.navItemsSelectedDark}}
+                    
+                    >
+                      
                       <ListItemIcon>
                         {item.icon}
                       </ListItemIcon>
@@ -125,11 +135,7 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
                    </ListItem>
                  ))}
                  <ListItem button 
-                  onClick={() => {
-                    const link = document.createElement("a");
-                    link.href = `mailto:${profile.email}`;
-                    link.click();
-                  }}
+                  onClick={onClickHandler}
                    >
                   <ListItemIcon >
                     <EmailIcon />
@@ -137,11 +143,7 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
                   <Typography style={{fontWeight:500}}>{profile.email}</Typography>
                   </ListItem>
                   <ListItem button 
-                  onClick={() => {
-                    const link = document.createElement("a");
-                    link.href = `tel:${profile.phone}`;
-                    link.click();
-                  }}>
+                  onClick={onClickHandler}>
                   <ListItemIcon>
                     <PhoneIcon />
                   </ListItemIcon>

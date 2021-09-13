@@ -52,6 +52,7 @@ const App = () => {
         dark: "#ac1900",
         contrastText: "#000",
       },
+      
       secondary: {
         light: "#ffbb93",
         main: "#ff8a65",
