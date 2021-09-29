@@ -148,6 +148,7 @@ export const personalInfo = {
           "HTML5",
           "CSS3",
           "Javascript",
+          "Typescript",
           "React Js",
           "React Hooks",
           "React Router",
@@ -161,7 +162,7 @@ export const personalInfo = {
       {
         id: "skills2",
         category: "Back-End",
-        languages: ["Node.js", "Next.js", "Python"],
+        languages: ["Node.js", "Python"],
       },
       {
         id: "skills3",
