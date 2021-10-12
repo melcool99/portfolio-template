@@ -3,7 +3,7 @@ export const personalInfo = {
     {
       firstName: "Cristian",
       lastName: "Vlad",
-      occupation: "Frontend Developer",
+      occupation: "Front-End Developer",
       city: "Bucharest",
       country: "Romania",
       email: "vladcristian84@gmail.com",
@@ -147,9 +147,9 @@ export const personalInfo = {
         languages: [
           "HTML5",
           "CSS3",
-          "Javascript",
-          "Typescript",
-          "React Js",
+          "JavaScript",
+          "TypeScript",
+          "React JS",
           "React Hooks",
           "React Router",
           "Redux",
@@ -179,7 +179,7 @@ export const personalInfo = {
       {
         id: "lang1",
         title: "English",
-        level: "Professional Proficiency",
+        level: "Professional",
       },
       {
         id: "lang2",
