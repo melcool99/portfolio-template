@@ -48,7 +48,7 @@ export const personalInfo = {
       company: "VOLENA DESIGN S.R.L",
       year: {
         start: "2018",
-        end: "Present",
+        end: "2021",
       },
       city: "Bucharest",
       description: [
