@@ -3,7 +3,7 @@ export const personalInfo = {
     {
       firstName: "Cristian",
       lastName: "Vlad",
-      occupation: "Front-End Developer",
+      occupation: "Frontend Developer",
       city: "Bucharest",
       country: "Romania",
       email: "vladcristian84@gmail.com",
