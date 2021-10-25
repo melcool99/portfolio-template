@@ -7,7 +7,7 @@ import Brightness3Icon from "@material-ui/icons/Brightness3";
 const DarkModeSwitch = ({ darkMode, setDarkmode }) => {
   return (
     <>
-        <IconButton onClick={() => setDarkmode(!darkMode)}>
+        <IconButton onClick={(e) =>  setDarkmode(!darkMode)}>
           {!darkMode ? (
             <WbSunnyIcon color={darkMode ? "inherit" : "primary"} />
           ) : (

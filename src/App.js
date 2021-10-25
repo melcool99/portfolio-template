@@ -43,6 +43,7 @@ const App = () => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
   const [darkMode, setDarkmode] = useState(true)
+  
   const theme = createTheme({
     typography: {
       fontFamily: 'Quicksand, sans-serif',
@@ -66,6 +67,7 @@ const App = () => {
     },
   })
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+
   const handleOpenMenu = (e) => {
     setOpen(!open)
   }
@@ -74,19 +76,15 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Paper className={classes.root}>
         <Grid container>
-          {!isMobile && (
-            <NavBar
-              openMenu={open}
+          {!isMobile ? (
+            <NavBar isMobile={isMobile} />
+          ) : (
+            <MobileProfile
+              open={open}
+              handleOpenMenu={handleOpenMenu}
               isMobile={isMobile}
-              darkMode={darkMode}
-              setDarkmode={setDarkmode}
             />
           )}
-          <MobileProfile
-            open={open}
-            handleOpenMenu={handleOpenMenu}
-            isMobile={isMobile}
-          />
 
           <Grid item className={classes.rootPages} xs>
             <Box
@@ -99,23 +97,23 @@ const App = () => {
                 darkMode={darkMode}
               />
             </Box>
-              <Switch>
-                <Route exact path='/'>
-                  <AboutMe isMobile={isMobile} darkMode={darkMode} />
-                </Route>
-                <Route path='/resume'>
-                  <Resume />
-                </Route>
-                <Route path='/portfolio'>
-                  <Portfolio />
-                </Route>
-                <Route path='*' component={PageNotFound} />
-              </Switch>
+            <Switch>
+              <Route exact path='/'>
+                <AboutMe isMobile={isMobile} />
+              </Route>
+              <Route exact path='/resume'>
+                <Resume />
+              </Route>
+              <Route path='/portfolio'>
+                <Portfolio />
+              </Route>
+              <Route path='*' component={PageNotFound} />
+            </Switch>
           </Grid>
           <MenuBtn onClick={handleOpenMenu} isMobile={isMobile} open={open} />
         </Grid>
-        <CssBaseline />
       </Paper>
+      <CssBaseline />
     </ThemeProvider>
   )
 }

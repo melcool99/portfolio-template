@@ -13,20 +13,11 @@ import { personalInfo } from '../../../assets/data/personalInfo'
 import pozaprf from '../../../assets/images/pozaprf.jpg'
 import ResumeBtn from '../../UI/ResumeBtn'
 import Footer from '../Footer'
-
 const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: 'rgba(122, 111, 92, 0.3)',
-    backdropFilter: 'blur(13px) saturate(100%)',
-    borderRadius: 12,
-    height: '100%',
-    width: '100%',
-  },
-
   profileItems: {
-    display: 'flex',
     height: '100vh',
     width: '100%',
+    display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -35,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     paddingTop: '2rem',
+    marginTop:'3rem'
   },
 
   contactInfo: {
@@ -48,11 +40,17 @@ const useStyles = makeStyles((theme) => ({
   avatarLarge: {
     width: theme.spacing(20),
     height: theme.spacing(20),
+    
   },
 
   avatarMid: {
     width: theme.spacing(10),
     height: theme.spacing(10),
+
+  },
+
+  iconButton:{
+    fonstSize:'0.2rem'
   },
 
   butonItem: {
@@ -63,9 +61,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const AboutMe = ({ isMobile }) => {
+const AboutMe = ({isMobile}) => {
   const classes = useStyles()
-
   const onClickHandler = (e) => {
     const linkTo = e.target.innerText.includes('@') ? 'mailto' : 'tel'
     const link = document.createElement('a')
@@ -114,7 +111,9 @@ const AboutMe = ({ isMobile }) => {
               <Box display='flex'>
                 <Button size='small' onClick={onClickHandler}>
                   <PhoneIcon />
-                  <Typography style={{ marginLeft: '5px' }}>
+                  <Typography style={{ marginLeft: '5px', fontSize:isMobile &&'0.9rem' }}
+                  
+                  >
                     {profile.phone}
                   </Typography>
                 </Button>
@@ -125,13 +124,13 @@ const AboutMe = ({ isMobile }) => {
                   style={{ textTransform: 'lowercase' }}
                   onClick={onClickHandler}>
                   <EmailIcon />
-                  <Typography style={{ marginLeft: '5px' }}>
+                  <Typography style={{ marginLeft: '5px',fontSize:isMobile &&'0.9rem' }}>
                     {profile.email}
                   </Typography>
                 </Button>
               </Box>
             </Box>
-            <Box className={classes.iconButton}>
+            <Box >
               <IconButton
                 href={profile.socialMediaLinks.githubUrl}
                 target='_blank'>

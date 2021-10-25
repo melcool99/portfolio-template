@@ -18,9 +18,9 @@ const useStyles = makeStyles((theme) => ({
     flexShrink: 0,
   },
   drawerPaper: {
-    width: '50%',
-    backgroundColor: 'rgba(122, 111, 92, 0.5)',
-    backdropFilter: 'blur(20px) saturate(180%)',
+    width: '70%',
+    backgroundColor: 'rgba(122, 111, 92, 0.2)',
+    backdropFilter: 'blur(20px)',
   },
 
   navItemsSelectedDark: {
@@ -43,7 +43,7 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
 
   return (
     <>
-      {isMobile && (
+
         <Drawer
           variant='temporary'
           anchor='left'
@@ -54,6 +54,7 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
           <Box>
             {menuItems.map((item) => (
               <ListItem
+
                 button
                 component={NavLink}
                 to={item.path}
@@ -71,7 +72,7 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
             ))}
           </Box>
         </Drawer>
-      )}
+
     </>
   )
 }
