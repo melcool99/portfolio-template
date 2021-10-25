@@ -1,7 +1,6 @@
-import { Box, Button, Zoom } from '@material-ui/core'
+import { Box, Button, Grid, Zoom } from '@material-ui/core'
 import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
-import ListItem from '@material-ui/core/ListItem'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import EmailIcon from '@material-ui/icons/Email'
@@ -12,55 +11,38 @@ import React from 'react'
 import { personalInfo } from '../../../assets/data/personalInfo'
 import pozaprf from '../../../assets/images/pozaprf.jpg'
 import ResumeBtn from '../../UI/ResumeBtn'
-import Footer from '../Footer'
 
 const useStyles = makeStyles((theme) => ({
-  profileItems: {
+  root: {
+    display: 'flex',
     height: '100vh',
     width: '100%',
-    display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  avatarInfo: {
+
+  rootItems: {
     display: 'flex',
     flexDirection: 'column',
-  },
-
-  contactInfo: {
-    justifyContent: 'center',
-  },
-
-  footerStyle: {
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flexGrow: 1,
+    marginTop:'2rem'
   },
 
   avatarLarge: {
     width: theme.spacing(20),
     height: theme.spacing(20),
-    
   },
 
   avatarMid: {
     width: theme.spacing(10),
     height: theme.spacing(10),
-
-  },
-
-  iconButton:{
-    fonstSize:'0.2rem'
-  },
-
-  butonItem: {
-    justifyContent: 'center',
-  },
-  box: {
-    padding: '10px',
   },
 }))
 
-const AboutMe = ({isMobile}) => {
+const AboutMe = ({ isMobile }) => {
   const classes = useStyles()
 
   const onClickHandler = (e) => {
@@ -72,10 +54,11 @@ const AboutMe = ({isMobile}) => {
 
   return (
     <>
-      {personalInfo.personalProfile.map((profile) => (
-            <Zoom  in timeout={{enter:500, exit:500}}>
-        <Box  key={Math.random()} className={classes.profileItems}>
-            <ListItem className={classes.avatarInfo}>
+      <Zoom in timeout={{ enter: 500, exit: 500 }}>
+      <div>
+        {personalInfo.personalProfile.map((profile) => (
+          <Grid container key={Math.random()} className={classes.root}>
+            <Grid item className={classes.rootItems}>
               <Avatar
                 alt='profile picture'
                 variant='circular'
@@ -88,32 +71,30 @@ const AboutMe = ({isMobile}) => {
               <Typography variant={isMobile ? 'h6' : 'h5'}>
                 {profile.occupation}
               </Typography>
-            </ListItem>
-            <Box
-              sx={{
-                maxWidth: '80%',
-                mt: 10,
-                ml: 10,
-                mr: 10,
-                height:'100%'
-              }}>
-              <Typography align='center' variant={isMobile ? 'body1' : 'h5'}>
-              Hi, I am a self-taught web developer from Bucharest, Romania, proficient in JavaScript, Typescript, React, HTML, CSS, and SQL.
+              <Box sx={{mt:10, width:'80%'}}>
+              <Typography align='center' variant={isMobile ? 'body1' : 'h6'}>
+                Hi, I am a self-taught web developer from Bucharest, Romania,
+                proficient in JavaScript, Typescript, React, HTML, CSS, and SQL.
               </Typography>
-              <Typography align='center' variant={isMobile ? 'body1' : 'h5'}>
-              Passionate about technology, innovation, and their role in the future. 
+              <Typography align='center' variant={isMobile ? 'body1' : 'h6'}>
+                Passionate about technology, innovation, and their role in the
+                future.
               </Typography>
-              <Typography align='center' variant={isMobile ? 'body1' : 'h5'}>
-              I like hanging out with friends, reading about tech, watching football, movies, playing video games and poker.
+              <Typography align='center' variant={isMobile ? 'body1' : 'h6'}>
+                I like hanging out with friends, reading about tech, watching
+                football, movies, playing video games and poker.
               </Typography>
-            </Box>
-            <Box display='flex' flexDirection='column'>
+              </Box>
+            </Grid>
+            <Grid item>
               <Box display='flex'>
                 <Button size='small' onClick={onClickHandler}>
                   <PhoneIcon />
-                  <Typography style={{ marginLeft: '5px', fontSize:isMobile &&'0.9rem' }}
-                  
-                  >
+                  <Typography
+                    style={{
+                      marginLeft: '5px',
+                      fontSize: isMobile && '0.9rem',
+                    }}>
                     {profile.phone}
                   </Typography>
                 </Button>
@@ -124,13 +105,17 @@ const AboutMe = ({isMobile}) => {
                   style={{ textTransform: 'lowercase' }}
                   onClick={onClickHandler}>
                   <EmailIcon />
-                  <Typography style={{ marginLeft: '5px',fontSize:isMobile &&'0.9rem' }}>
+                  <Typography
+                    style={{
+                      marginLeft: '5px',
+                      fontSize: isMobile && '0.9rem',
+                    }}>
                     {profile.email}
                   </Typography>
                 </Button>
               </Box>
-            </Box>
-            <Box >
+            </Grid>
+            <Grid item>
               <IconButton
                 href={profile.socialMediaLinks.githubUrl}
                 target='_blank'>
@@ -141,16 +126,14 @@ const AboutMe = ({isMobile}) => {
                 target='_blank'>
                 <LinkedInIcon color='primary' />
               </IconButton>
-            </Box>
-            <ListItem className={classes.butonItem}>
-              <ResumeBtn />
-            </ListItem>
-            <ListItem className={classes.footerStyle}>
-              <Footer />
-            </ListItem>
-          </Box>
-        </Zoom>
-      ))}
+              <Box  sx={{mb:10}}>
+                <ResumeBtn />
+              </Box>
+            </Grid>
+          </Grid>
+        ))}
+      </div>
+      </Zoom>
     </>
   )
 }
