@@ -5,6 +5,7 @@ import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
+import InfoIcon from '@material-ui/icons/Info';
 import ListItemText from "@material-ui/core/ListItemText";
 import { NavLink } from "react-router-dom";
 import { Drawer } from "@material-ui/core";
@@ -14,10 +15,16 @@ import { Paper } from "@material-ui/core";
 export const menuItems = [
  
   {
+    text: "About Me",
+    icon: <InfoIcon/>,
+    color: "secondary",
+    path: "/",
+  },
+  {
     text: "Resume",
     icon: <SchoolIcon />,
     color: "secondary",
-    path: "/",
+    path: "/resume",
   },
   {
     text: "Porfolio",

@@ -162,7 +162,7 @@ export const personalInfo = {
       {
         id: "skills2",
         category: "Back-End",
-        languages: ["Node.js", "Python"],
+        languages: ["Next.JS", "Python"],
       },
       {
         id: "skills3",

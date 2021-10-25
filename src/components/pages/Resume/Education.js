@@ -12,7 +12,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { Box, Grid } from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
-import { personalInfo } from "../../data/personalInfo";
+import { personalInfo } from "../../../assets/data/personalInfo";
 
 const useStyles = makeStyles((theme) => ({
   opositeItem: {

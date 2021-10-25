@@ -14,7 +14,7 @@ import WorkIcon from "@material-ui/icons/Work";
 import { Box, Grid } from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
 
-import { personalInfo } from "../../data/personalInfo";
+import { personalInfo } from "../../../assets/data/personalInfo";
 
 const useStyles = makeStyles((theme) => ({
   root: {},

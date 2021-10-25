@@ -14,7 +14,7 @@ import TimelineDot from "@material-ui/lab/TimelineDot";
 import { makeStyles, useTheme } from "@material-ui/core";
 import { useMediaQuery } from "@material-ui/core";
 import clsx from "clsx";
-import { personalInfo } from "../../data/personalInfo";
+import { personalInfo } from "../../../assets/data/personalInfo";
 
 const useStyles = makeStyles((theme) => ({
   root: {
