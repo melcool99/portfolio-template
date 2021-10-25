@@ -15,7 +15,7 @@ import ResumeBtn from '../../UI/ResumeBtn'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    height: '100vh',
+    height: '100%',
     width: '100%',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    flexGrow: 1,
+    flex: 1,
     marginTop:'2rem'
   },
 
@@ -71,7 +71,7 @@ const AboutMe = ({ isMobile }) => {
               <Typography variant={isMobile ? 'h6' : 'h5'}>
                 {profile.occupation}
               </Typography>
-              <Box sx={{mt:10, width:'80%'}}>
+              <Box sx={{mt:10,mb:10, width:'80%'}}>
               <Typography align='center' variant={isMobile ? 'body1' : 'h6'}>
                 Hi, I am a self-taught web developer from Bucharest, Romania,
                 proficient in JavaScript, Typescript, React, HTML, CSS, and SQL.
