@@ -1,11 +1,10 @@
-import Box from '@material-ui/core/Box'
+import { List } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-
 import React from 'react'
 import { useLocation } from 'react-router'
 import { NavLink } from 'react-router-dom'
@@ -19,8 +18,10 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: '70%',
+    borderRadius:15,
+
     backgroundColor: 'rgba(122, 111, 92, 0.2)',
-    backdropFilter: 'blur(20px)',
+    backdropFilter: 'blur(10px)',
   },
 
   navItemsSelectedDark: {
@@ -46,12 +47,12 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
 
         <Drawer
           variant='temporary'
-          anchor='left'
+          anchor='right'
           className={classes.drawer}
           classes={{ paper: classes.drawerPaper }}
           open={open}
           onClose={handleOpenMenu}>
-          <Box>
+          <List>
             {menuItems.map((item) => (
               <ListItem
 
@@ -70,7 +71,7 @@ const MobileProfile = ({ open, handleOpenMenu, isMobile }) => {
                 </ListItemText>
               </ListItem>
             ))}
-          </Box>
+          </List>
         </Drawer>
 
     </>
