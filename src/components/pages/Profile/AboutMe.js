@@ -13,6 +13,7 @@ import { personalInfo } from '../../../assets/data/personalInfo'
 import pozaprf from '../../../assets/images/pozaprf.jpg'
 import ResumeBtn from '../../UI/ResumeBtn'
 import Footer from '../Footer'
+
 const useStyles = makeStyles((theme) => ({
   profileItems: {
     height: '100vh',
@@ -25,8 +26,6 @@ const useStyles = makeStyles((theme) => ({
   avatarInfo: {
     display: 'flex',
     flexDirection: 'column',
-    paddingTop: '2rem',
-    marginTop:'3rem'
   },
 
   contactInfo: {
@@ -63,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
 
 const AboutMe = ({isMobile}) => {
   const classes = useStyles()
+
   const onClickHandler = (e) => {
     const linkTo = e.target.innerText.includes('@') ? 'mailto' : 'tel'
     const link = document.createElement('a')
@@ -73,8 +73,8 @@ const AboutMe = ({isMobile}) => {
   return (
     <>
       {personalInfo.personalProfile.map((profile) => (
-        <Zoom key={Math.random()} in timeout={{enter:500, exit:500}}>
-          <Box  className={classes.profileItems}>
+            <Zoom  in timeout={{enter:500, exit:500}}>
+        <Box  key={Math.random()} className={classes.profileItems}>
             <ListItem className={classes.avatarInfo}>
               <Avatar
                 alt='profile picture'
@@ -92,10 +92,10 @@ const AboutMe = ({isMobile}) => {
             <Box
               sx={{
                 maxWidth: '80%',
-                height: '100%',
                 mt: 10,
                 ml: 10,
                 mr: 10,
+                height:'100%'
               }}>
               <Typography align='center' variant={isMobile ? 'body1' : 'h5'}>
               Hi, I am a self-taught web developer from Bucharest, Romania, proficient in JavaScript, Typescript, React, HTML, CSS, and SQL.
