@@ -241,7 +241,7 @@ export const personalInfo = {
       description:'Quotes page with React Redux and Firebase API '
     },
     {
-      title: "Food Order ",
+      title: "Food Ordering App ",
       githubUrl: "https://github.com/melcool99/food-order-app",
       url: "https://mlc-foodorder.netlify.app/",
       image: "https://source.unsplash.com/featured/?food",

@@ -2,7 +2,7 @@ import React from "react";
 import ResumeSkills from "./ResumeSkills";
 import Education from "./Education";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import WorkExperience from "./WorkExperience";
 import { Zoom } from "@material-ui/core";
 
@@ -25,6 +25,7 @@ const Resume = () => {
 
   return (
     <Zoom in timeout={{ enter: 500, exit: 300 }}>
+      <Container>
       <Grid container className={classes.root}>
         <Grid item className={classes.rootItems} md={6} lg={6} sm={6} xs={12}>
           <Education classes={classes.paper} />
@@ -34,6 +35,7 @@ const Resume = () => {
           <ResumeSkills />
         </Grid>
       </Grid>
+      </Container>
     </Zoom>
   );
 };

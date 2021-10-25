@@ -1,4 +1,4 @@
-import { Box, CardHeader, Grid, Typography, Zoom } from "@material-ui/core";
+import { Box, CardHeader, Container, Grid, Typography, Zoom } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -56,6 +56,7 @@ const Portfolio = () => {
   return (
     <>
       <Zoom  in timeout={{enter:500, exit:500}}>
+        <Container>
         <Grid container className={classes.root}>
           <Typography variant ='h4'className={classes.titleHeader}>
             Portfolio
@@ -98,6 +99,7 @@ const Portfolio = () => {
             ))}
           </Box>
         </Grid>
+        </Container>
       </Zoom>
     </>
   );
