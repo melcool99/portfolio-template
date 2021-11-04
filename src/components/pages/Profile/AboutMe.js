@@ -76,21 +76,17 @@ const AboutMe = ({ isMobile }) => {
                     align='center'
                     variant={isMobile ? 'body1' : 'h6'}>
                     Self-taught web developer from Bucharest,
-                    Romania, with a passion for technology, innovation, and their role in
-                    the future.
-                    
+                    Romania, interested in IT and everything in its orbit.
                   </Typography>
                   <Typography
                     align='center'
                     variant={isMobile ? 'body1' : 'h6'}>
-                   My coding skills are: JavaScript, Typescript, React, HTML,
-                    CSS, and SQL.
+                   My coding skills are: JavaScript, Typescript React, Next.JS, HTML,CSS, and PostgreSQL.
                   </Typography>
                   <Typography
                     align='center'
                     variant={isMobile ? 'body1' : 'h6'}>
-                    I like hanging out with friends, reading about tech,
-                    watching football, movies, playing video games and poker.
+                   I currently aim to learn as much as I can in a work environment and to improve my abilities in a professional setting.
                   </Typography>
                 </Box>
               </Grid>
