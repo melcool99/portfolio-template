@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-start',
     alignItems: 'center',
     flex: 1,
-    marginTop:'2rem'
+    marginTop: '2rem',
   },
 
   avatarLarge: {
@@ -55,84 +55,90 @@ const AboutMe = ({ isMobile }) => {
   return (
     <>
       <Zoom in timeout={{ enter: 500, exit: 500 }}>
-      <div>
-        {personalInfo.personalProfile.map((profile) => (
-          <Grid container key={Math.random()} className={classes.root}>
-            <Grid item className={classes.rootItems}>
-              <Avatar
-                alt='profile picture'
-                variant='circular'
-                src={pozaprf}
-                className={isMobile ? classes.avatarMid : classes.avatarLarge}
-              />
-              <Typography variant={isMobile ? 'h5' : 'h4'}>
-                {profile.firstName} {profile.lastName}
-              </Typography>
-              <Typography variant={isMobile ? 'h6' : 'h5'}>
-                {profile.occupation}
-              </Typography>
-              <Box sx={{mt:10,mb:10, width:'80%'}}>
-              <Typography align='center' variant={isMobile ? 'body1' : 'h6'}>
-                Hi, I am a self-taught web developer from Bucharest, Romania,
-                proficient in JavaScript, Typescript, React, HTML, CSS, and SQL.
-              </Typography>
-              <Typography align='center' variant={isMobile ? 'body1' : 'h6'}>
-                Passionate about technology, innovation, and their role in the
-                future.
-              </Typography>
-              <Typography align='center' variant={isMobile ? 'body1' : 'h6'}>
-                I like hanging out with friends, reading about tech, watching
-                football, movies, playing video games and poker.
-              </Typography>
-              </Box>
-            </Grid>
-            <Grid item>
-              <Box display='flex'>
-                <Button size='small' onClick={onClickHandler}>
-                  <PhoneIcon />
+        <div>
+          {personalInfo.personalProfile.map((profile) => (
+            <Grid container key={Math.random()} className={classes.root}>
+              <Grid item className={classes.rootItems}>
+                <Avatar
+                  alt='profile picture'
+                  variant='circular'
+                  src={pozaprf}
+                  className={isMobile ? classes.avatarMid : classes.avatarLarge}
+                />
+                <Typography variant={isMobile ? 'h5' : 'h4'}>
+                  {profile.firstName} {profile.lastName}
+                </Typography>
+                <Typography variant={isMobile ? 'h6' : 'h5'}>
+                  {profile.occupation}
+                </Typography>
+                <Box sx={{ mt: 10, mb: 10, width: '80%' }}>
                   <Typography
-                    style={{
-                      marginLeft: '5px',
-                      fontSize: isMobile && '0.9rem',
-                    }}>
-                    {profile.phone}
+                    align='center'
+                    variant={isMobile ? 'body1' : 'h6'}>
+                    Self-taught web developer from Bucharest,
+                    Romania, with a passion for technology, innovation, and their role in
+                    the future.
+                    
                   </Typography>
-                </Button>
-              </Box>
-              <Box display='flex' alignItems='center'>
-                <Button
-                  size='small'
-                  style={{ textTransform: 'lowercase' }}
-                  onClick={onClickHandler}>
-                  <EmailIcon />
                   <Typography
-                    style={{
-                      marginLeft: '5px',
-                      fontSize: isMobile && '0.9rem',
-                    }}>
-                    {profile.email}
+                    align='center'
+                    variant={isMobile ? 'body1' : 'h6'}>
+                   My coding skills are: JavaScript, Typescript, React, HTML,
+                    CSS, and SQL.
                   </Typography>
-                </Button>
-              </Box>
+                  <Typography
+                    align='center'
+                    variant={isMobile ? 'body1' : 'h6'}>
+                    I like hanging out with friends, reading about tech,
+                    watching football, movies, playing video games and poker.
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item >
+                  <Box>
+                    <Button size='small' onClick={onClickHandler}>
+                      <PhoneIcon />
+                      <Typography
+                        style={{
+                          marginLeft: '5px',
+                          fontSize: isMobile && '0.9rem',
+                        }}>
+                        {profile.phone}
+                      </Typography>
+                    </Button>
+                  </Box>
+                  <Box >
+                    <Button
+                      size='small'
+                      style={{ textTransform: 'lowercase' }}
+                      onClick={onClickHandler}>
+                      <EmailIcon />
+                      <Typography
+                        style={{
+                          marginLeft: '5px',
+                          fontSize: isMobile && '0.9rem',
+                        }}>
+                        {profile.email}
+                      </Typography>
+                    </Button>
+                  </Box>
+              </Grid>
+              <Grid item style={{display:'flex', alignItems:'center' }}>
+                  <IconButton
+                    href={profile.socialMediaLinks.githubUrl}
+                    target='_blank'>
+                    <GitHubIcon color='primary' />
+                  </IconButton>
+                  <IconButton
+                    href={profile.socialMediaLinks.linkedInUrl}
+                    target='_blank'>
+                    <LinkedInIcon color='primary' />
+                  </IconButton>
+                  <ResumeBtn />
+              </Grid>
             </Grid>
-            <Grid item>
-              <IconButton
-                href={profile.socialMediaLinks.githubUrl}
-                target='_blank'>
-                <GitHubIcon color='primary' />
-              </IconButton>
-              <IconButton
-                href={profile.socialMediaLinks.linkedInUrl}
-                target='_blank'>
-                <LinkedInIcon color='primary' />
-              </IconButton>
-              <Box  sx={{mb:10}}>
-                <ResumeBtn />
-              </Box>
-            </Grid>
-          </Grid>
-        ))}
-      </div>
+          ))}
+        </div>
       </Zoom>
     </>
   )
