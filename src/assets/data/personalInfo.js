@@ -234,6 +234,14 @@ export const personalInfo = {
       description: "Portfolio template using React and Material UI ",
     },
     {
+      title: "Product display with enhanced searching features",
+      githubUrl: "https://github.com/melcool99/kubis",
+      url: "https://kubis.vercel.app/",
+      image: "https://source.unsplash.com/featured/?fitness",
+      description: "Next JS and Material UI project",
+    },
+
+    {
       title: "Great Quotes",
       githubUrl:"https://github.com/melcool99/Great-Quotes",
       url:'https://mlc-greatquotes.netlify.app',
