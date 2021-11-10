@@ -234,7 +234,7 @@ export const personalInfo = {
       description: "Portfolio template using React and Material UI ",
     },
     {
-      title: "Product display with enhanced searching features",
+      title: "Search Products",
       githubUrl: "https://github.com/melcool99/kubis",
       url: "https://kubis.vercel.app/",
       image: "https://source.unsplash.com/featured/?fitness",
